@@ -1,6 +1,6 @@
 <span align="center">
 
-![](src/images/Sogeti_Logo.svg)
+![](src/images/Logo.svg)
 
 </span>
 
@@ -140,7 +140,7 @@ private static boolean isaLeftEyeBrow(int yCoordinate, int xCoordinate) {
 </span>
 
 #### Als je problemen hebt met het kiezen van je eigen ansi-kleur:
-- In de Color.class zijn er twee links met documentatie en een korte uitleg hoe je je eigen kleur kiest.
+- In de Colors.class zijn er twee links met documentatie en een korte uitleg hoe je je eigen kleur kiest.
 
 ---
 
@@ -293,7 +293,7 @@ private static boolean isaLeftEyeBrow(int yCoordinate, int xCoordinate) {
 </span>
 
 #### If you have trouble with choosing your own ansi color:
-- In the Color.class there are two links with documentation and short explanation how to choose your own color.
+- In the Colors.class there are two links with documentation and short explanation how to choose your own color.
 
 
 ---
