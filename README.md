@@ -163,7 +163,7 @@ private static boolean isaLeftEyeBrow(int yCoordinate, int xCoordinate) {
 
 #### Hooray, it’s almost Easter again, time to look for Easter eggs!
 #### Easter eggs are a well-known phenomenon in software. Most customers don’t appreciate it if you put some in production code, so here is your moment! Grab your Java paint bucket and your keyboard and create, literally, the most incredible easter egg. Use our starting template and decorate the egg in the most creative way. Maybe you can even make it animate like a flipbook?
-#### Join the contest and we’ll judge on creativity in code and in appearance of the egg. There is a nice price involved.
+#### Join the contest and we’ll judge on creativity in code and in appearance of the egg. There is a nice prize involved.
 
 </span>
 
