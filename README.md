@@ -28,6 +28,7 @@
 </span>
 
 #### Het paasei leveren wij, de invulling is aan jou. Wel zijn er enkele regels om rekening mee te houden:
+- Het paasei moet geprint zijn in je console.
 - Het is niet de bedoeling dat het paasei blokje in een println() wordt gemaakt, om deze vervolgens uit te printen. Daarom jureren we alleen paaseieren die genereerd worden op basis van code algoritme.
  Bijvoorbeeld wat niet is toegestaan:
  ```
@@ -182,6 +183,7 @@ private static boolean isaLeftEyeBrow(int yCoordinate, int xCoordinate) {
 </span>
 
 #### We deliver the Easter egg, the completion is up to you. There are some rules to keep in mind:
+- The Easter egg must be printed in your console.
 - It is not the intention that the Easter egg block is made in a println (), and then printed out. That is why we only judge Easter eggs that are generated based on code algorithm.
   For example, what is not allowed:
 
