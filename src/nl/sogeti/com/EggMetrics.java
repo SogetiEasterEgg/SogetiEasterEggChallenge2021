@@ -5,18 +5,14 @@ public class EggMetrics {
     private final int verticalRadius;
     private int centerXPoint;
     private int centerYPoint;
-    private final String color;
-    private final String backgroundColor;
     private int frameHeight;
     private int frameWidth;
 
-    public EggMetrics(final int horizontalRadius, final int verticalRadius, final int centerXPoint, final int centerYPoint, final String color, final String backgroundColor) {
+    public EggMetrics(final int horizontalRadius, final int verticalRadius, final int centerXPoint, final int centerYPoint) {
         this.horizontalRadius = horizontalRadius;
         this.verticalRadius = verticalRadius;
         modifyCenterXPoint(horizontalRadius, centerXPoint);
         modifyCenterYPoint(verticalRadius, centerYPoint);
-        this.color = color;
-        this.backgroundColor = backgroundColor;
         calculateFrameHeight(verticalRadius, this.centerYPoint);
         calculateFrameWidth(horizontalRadius, this.centerXPoint);
     }
@@ -35,10 +31,6 @@ public class EggMetrics {
 
     public int getCenterYPoint() {
         return centerYPoint;
-    }
-
-    public String getColor() {
-        return color;
     }
 
     public String getBackgroundColor(int yCoordinate) {

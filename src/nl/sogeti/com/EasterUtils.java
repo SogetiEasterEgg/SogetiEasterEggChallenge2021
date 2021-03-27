@@ -1,7 +1,6 @@
 package nl.sogeti.com;
 
 import java.time.LocalDate;
-import java.util.Calendar;
 
 public class EasterUtils {
 

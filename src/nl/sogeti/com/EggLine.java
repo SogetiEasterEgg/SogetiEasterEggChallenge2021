@@ -28,10 +28,6 @@ public class EggLine {
                 + "            ";
     }
 
-    public LocalDate getEasterDate() {
-        return easterDate;
-    }
-
     public String getCharacter(int position) {
         char charToPrint = this.text.charAt((this.offset + position) % this.text.length());
         if (charToPrint == SPACE) {
