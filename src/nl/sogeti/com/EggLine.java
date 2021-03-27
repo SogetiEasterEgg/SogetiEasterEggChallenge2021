@@ -5,18 +5,27 @@ import java.time.format.DateTimeFormatter;
 
 public class EggLine {
 
+    private static final char BULLET = 0x2022;
+    private static final char NON_BREAKING_SPACE = 0x00A0;
+    private static final char SPACE = 0x20;
+
     private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
     private final LocalDate easterDate;
     private final String text;
     private final int offset;
     private final String color;
 
-    public EggLine(int year) {
+    public EggLine(int year, String color) {
         this.offset = year % 30;
         this.easterDate = EasterUtils.getEasterDate(year);
-        int daySince21March = easterDate.getDayOfMonth() - 20 + ((easterDate.getMonth().getValue() - 3)* 31);
-        this.color = EggColors.getColor(daySince21March);
-        this.text = easterDate.format(dateTimeFormatter) + "                    ";
+        this.color = color;
+        this.text = "    "
+                + BULLET
+                + NON_BREAKING_SPACE
+                + easterDate.format(dateTimeFormatter)
+                + NON_BREAKING_SPACE
+                + BULLET
+                + "            ";
     }
 
     public LocalDate getEasterDate() {
@@ -24,6 +33,13 @@ public class EggLine {
     }
 
     public String getCharacter(int position) {
-        return this.color + this.text.charAt((this.offset + position) % this.text.length());
+        char charToPrint = this.text.charAt((this.offset + position) % this.text.length());
+        if (charToPrint == SPACE) {
+            return this.color + charToPrint;
+        } else if (this.easterDate.getYear() == LocalDate.now().getYear()) {
+            return EggColors.getHighliteColor() + charToPrint + EggColors.RESET;
+        } else {
+            return EggColors.getRibbonColor() + charToPrint + EggColors.RESET;
+        }
     }
 }

@@ -18,7 +18,7 @@ public class EasterEgg {
     static void drawEgg(final EggMetrics eggMetrics) {
         int startYear = LocalDate.now().getYear() - eggMetrics.getFrameHeight() / 2;
         for (int yCoordinate = 0; yCoordinate <= eggMetrics.getFrameHeight(); yCoordinate++) {
-            EggLine line = new EggLine(startYear + yCoordinate);
+            EggLine line = new EggLine(startYear + yCoordinate, EggColors.getLineColor(((float) yCoordinate)/eggMetrics.getFrameHeight()));
             drawSingleEggRow(eggMetrics, yCoordinate, line);
             System.out.println();
         }
