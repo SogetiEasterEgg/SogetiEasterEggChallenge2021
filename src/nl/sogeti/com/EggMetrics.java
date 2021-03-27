@@ -41,8 +41,9 @@ public class EggMetrics {
         return color;
     }
 
-    public String getBackgroundColor() {
-        return backgroundColor;
+    public String getBackgroundColor(int yCoordinate) {
+        int bgColor = 21 - (5 * yCoordinate)/getFrameHeight();
+        return "\033[48;5;" + String.format("%d",bgColor) + "m \u001b[0m";
     }
 
     public int getFrameWidth() {

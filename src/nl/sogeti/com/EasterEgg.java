@@ -1,5 +1,7 @@
 package nl.sogeti.com;
 
+import java.time.LocalDate;
+
 public class EasterEgg {
 
     private static final float EGG_EQUATION_SCALE_FACTOR = 1000;
@@ -14,23 +16,25 @@ public class EasterEgg {
      * @param eggMetrics - Metrics of the Egg
      */
     static void drawEgg(final EggMetrics eggMetrics) {
+        int startYear = LocalDate.now().getYear() - eggMetrics.getFrameHeight() / 2;
         for (int yCoordinate = 0; yCoordinate <= eggMetrics.getFrameHeight(); yCoordinate++) {
-            drawSingleEggRow(eggMetrics, yCoordinate);
+            EggLine line = new EggLine(startYear + yCoordinate);
+            drawSingleEggRow(eggMetrics, yCoordinate, line);
             System.out.println();
         }
     }
 
-    private static void drawSingleEggRow(final EggMetrics eggMetrics, final int yCoordinate) {
+    private static void drawSingleEggRow(final EggMetrics eggMetrics, final int yCoordinate, final EggLine line) {
         for (int xCoordinate = 0; xCoordinate <= eggMetrics.getFrameWidth(); xCoordinate++) {
-            drawSingleEggPoint(eggMetrics, yCoordinate, xCoordinate);
+            drawSingleEggPoint(eggMetrics, yCoordinate, xCoordinate, line);
         }
     }
 
-    private static void drawSingleEggPoint(final EggMetrics eggMetrics, int yCoordinate, int xCoordinate) {
+    private static void drawSingleEggPoint(final EggMetrics eggMetrics, int yCoordinate, int xCoordinate, final EggLine line) {
         if (isXYPointInsideEgg(eggMetrics, xCoordinate, yCoordinate)) {
-            System.out.print(eggMetrics.getColor());
+            System.out.print(line.getCharacter(xCoordinate));
         } else {
-            System.out.print(eggMetrics.getBackgroundColor());
+            System.out.print(eggMetrics.getBackgroundColor(yCoordinate));
         }
     }
 
